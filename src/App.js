@@ -7,24 +7,28 @@ import Contact from './components/pages/Contact/Contact';
 import SchoolLife from './components/pages/SchoolLife/SchoolLife';
 import Login from "./components/pages/Login/Login";
 import SignUp from "./components/pages/SignUp/SignUp";
-
+import Footer from "./components/Footer/Footer";
+import "./App.css";
 const App=()=>{
     return (
-        <div>
-            <Router>
-                <div>
+        <div className="page-container">
+            <div className="content-wrap">
+                <Router>
+                    <div>
                     <header/>
-                    <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/home/about" exact component={About} />
-                        <Route path="/home/calender" exact component={Calender} />
-                        <Route path="/home/contact" exact component={Contact} />
-                        <Route path="/home/schoollife" exact component={SchoolLife}/>
-                        <Route path="home/signup" exact component={SignUp}/>
-                        <Route path="home/login" exact component={Login}/>
-                    </Switch>
-                </div>
-            </Router>
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/home/about" exact component={About} />
+                            <Route path="/home/calender" exact component={Calender} />
+                            <Route path="/home/contact" exact component={Contact} />
+                            <Route path="/home/schoollife" exact component={SchoolLife}/>
+                            <Route path="home/signup" exact component={SignUp}/>
+                            <Route path="home/login" exact component={Login}/>
+                        </Switch>
+                    </div>
+                </Router>
+            </div>
+            <Footer/>
         </div>
     );
 }
