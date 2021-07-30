@@ -5,9 +5,10 @@ import About from './components/pages/About/About';
 import Calender from './components/pages/Calender/Calender';
 import Contact from './components/pages/Contact/Contact';
 import SchoolLife from './components/pages/SchoolLife/SchoolLife';
-import SignIn from "./components/pages/SignIn/SignIn";
+import Login from "./components/pages/Login/Login";
 import SignUp from "./components/pages/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import "./App.css";
 const App=()=>{
     return (
@@ -15,8 +16,7 @@ const App=()=>{
             <div className="content-wrap">
                 <Router>
                     <div>
-                    <header/>
-                    <SignIn/>
+                    <Header/>
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/home/about" exact component={About} />
@@ -24,7 +24,7 @@ const App=()=>{
                             <Route path="/home/contact" exact component={Contact} />
                             <Route path="/home/schoollife" exact component={SchoolLife}/>
                             <Route path="home/signup" exact component={SignUp}/>
-                            <Route path="home/Signin" exact component={SignIn}/>
+                            <Route path="home/login" exact component={Login}/>
                         </Switch>
                     </div>
                 </Router>
