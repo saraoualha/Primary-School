@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Home from './components/pages/Home/Home';
 import About from './components/pages/About/About';
-import Calender from './components/pages/Calender/Calender';
+import Calendar from './components/pages/Calendar/Calendar';
 import Contact from './components/pages/Contact/Contact';
 import SchoolLife from './components/pages/SchoolLife/SchoolLife';
 import SignIn from "./components/pages/SignIn/SignIn";
@@ -16,11 +16,11 @@ const App=()=>{
                 <Router>
                     <div>
                     <header/>
-                    <SignIn/>
+                    
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/home/about" exact component={About} />
-                            <Route path="/home/calender" exact component={Calender} />
+                            <Route path="/home/calendar" exact component={Calendar} />
                             <Route path="/home/contact" exact component={Contact} />
                             <Route path="/home/schoollife" exact component={SchoolLife}/>
                             <Route path="home/signup" exact component={SignUp}/>
