@@ -16,7 +16,7 @@ const App=()=>{
             <div className="content-wrap">
                 <Router>
                     <div>
-                    <Contact/>
+                    <Header/>
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/home/about" exact component={About} />
