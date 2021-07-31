@@ -1,23 +1,15 @@
 import React,{useState} from 'react';
-import './SignIn.css';
 import Button from '../../UI/Button';
 import Card from '../../UI/Card';
-import ErrorModal from '../../UI/ErrorModal';
+import classes from './SignIn.module.css'
 
 const SignIn = (props) => {
-        const [enteredUsername,setEnteredUsername] = useState('');
+       /* const [enteredUsername,setEnteredUsername] = useState('');
         const [enteredPassword,setEnteredPassword] = useState('');
         const [error,setError] = useState();
      
          const addUserHandler = (event) => {
              event.preventDefault();
-             if (enteredUsername.trim().length===0 || enteredPassword.trim().length===0) {
-                 setError ({
-                     title : 'Invalid user name or password',
-                     message : 'please enter a valid username and password '
-                 })
-                 return;
-             }
              if ( enteredPassword.trim().length < 8) {
                  setError ({
                      title : 'invalide password',
@@ -51,16 +43,92 @@ const SignIn = (props) => {
                  <input id="username"
                       type ="text"
                        value={enteredUsername} 
-                       onChange={usernameChangeHandler} />
+                       onChange={usernameChangeHandler} 
+                       required/>
                  <label htmlFor="password" >Password</label>
                  <input id="password"
                      type ="password"
                       value={enteredPassword}
-                       onChange={passwordChangeHandler} />
+                       onChange={passwordChangeHandler} 
+                       required/>
                  <Button type="submit">Sign in</Button>
              </form>
              </Card>
-             </div>
-         );
+             </div> */
+
+             const [enteredUsername, setEnteredUsername] = useState('');
+             const [UsernameIsValid, setUsernameIsValid] = useState();
+             const [enteredPassword, setEnteredPassword] = useState('');
+             const [passwordIsValid, setPasswordIsValid] = useState();
+             const [formIsValid, setFormIsValid] = useState(false);
+             const [isLoggedIn, setIsLoggedIn] = useState(false);
+             const usernameChangeHandler = (event) => {
+                setEnteredUsername(event.target.value);
+            
+                setFormIsValid(
+                  (event.target.value.trim().length > 8 && enteredPassword.trim().length > 6)
+                );
+              };
+            
+              const passwordChangeHandler = (event) => {
+                setEnteredPassword(event.target.value);
+            
+                setFormIsValid(
+                  enteredUsername.trim().length > 8 && event.target.value.trim().length > 6
+                );
+              };
+            
+              const validateUsernameHandler = () => {
+                setUsernameIsValid(enteredUsername.trim().length > 8);
+              };
+            
+              const validatePasswordHandler = () => {
+                setPasswordIsValid(enteredPassword.trim().length > 6);
+              };
+            
+              const submitHandler = (event) => {
+                event.preventDefault();
+                setIsLoggedIn(true);
+              };
+            
+              return (
+                <Card className={classes.login}>
+                  <form onSubmit={submitHandler}>
+                    <div
+                      className={`${classes.control} ${
+                        UsernameIsValid === false ? classes.invalid : ''
+                      }`}
+                    >
+                      <label htmlFor="Username">Username</label>
+                      <input
+                        type="username"
+                        id="username"
+                        value={enteredUsername}
+                        onChange={usernameChangeHandler}
+                        onBlur={validateUsernameHandler}
+                      />
+                    </div>
+                    <div
+                      className={`${classes.control} ${
+                        passwordIsValid === false ? classes.invalid : ''
+                      }`}
+                    >
+                      <label htmlFor="password">Password</label>
+                      <input
+                        type="password"
+                        id="password"
+                        value={enteredPassword}
+                        onChange={passwordChangeHandler}
+                        onBlur={validatePasswordHandler}
+                      />
+                    </div>
+                    <div className={classes.actions}>
+                      <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+                        Login
+                      </Button>
+                    </div>
+                  </form>
+                </Card>
+              );
      };
 export default SignIn;
