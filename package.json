@@ -15,12 +15,9 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
     "react-scripts": "^4.0.3",
-=======
     "react-scripts": "4.0.3",
     "typescript": "^4.3.5",
->>>>>>> b474b7593b03e5df283d461fa9ba9fdd4342fbc7
     "web-vitals": "^1.1.2"
   },
   "scripts": {

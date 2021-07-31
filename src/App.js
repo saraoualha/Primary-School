@@ -16,9 +16,7 @@ const App=()=>{
             <div className="content-wrap">
                 <Router>
                     <div>
-                    <Header/>
-                    <header/>
-                        <SignIn/>
+                    <Contact/>
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/home/about" exact component={About} />
@@ -26,7 +24,7 @@ const App=()=>{
                             <Route path="/home/contact" exact component={Contact} />
                             <Route path="/home/schoollife" exact component={SchoolLife}/>
                             <Route path="home/signup" exact component={SignUp}/>
-                            <Route path="home/signin" exact component={SignIn}/>
+                            <Route path="home/Signin" exact component={SignIn}/>
                         </Switch>
                     </div>
                 </Router>
