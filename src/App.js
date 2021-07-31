@@ -5,7 +5,7 @@ import About from './components/pages/About/About';
 import Calender from './components/pages/Calender/Calender';
 import Contact from './components/pages/Contact/Contact';
 import SchoolLife from './components/pages/SchoolLife/SchoolLife';
-import Login from "./components/pages/Login/Login";
+import SignIn from "./components/pages/SignIn/SignIn";
 import SignUp from "./components/pages/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -24,7 +24,7 @@ const App=()=>{
                             <Route path="/home/contact" exact component={Contact} />
                             <Route path="/home/schoollife" exact component={SchoolLife}/>
                             <Route path="home/signup" exact component={SignUp}/>
-                            <Route path="home/login" exact component={Login}/>
+                            <Route path="home/signin" exact component={SignIn}/>
                         </Switch>
                     </div>
                 </Router>
