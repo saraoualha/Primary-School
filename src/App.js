@@ -9,7 +9,7 @@ import SignIn from "./components/pages/SignIn/SignIn";
 import SignUp from "./components/pages/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import "./App.css";
+import "./App.css"
 const App=()=>{
     return (
         <div className="page-container">
