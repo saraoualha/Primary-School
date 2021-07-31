@@ -32,7 +32,7 @@ const Footer =()=>{
                         <div className="col">
                             <h4>Learn More</h4>
                             <ul className="list-unstyled">
-                                <li><Link to="/home/calendar">Upcoming Events</Link></li>
+                                <li><a href="/home/calendar/">Upcoming Events</a></li>
                                 <li>Latest News</li>
                                 <li>Online Payment</li>
                             </ul>

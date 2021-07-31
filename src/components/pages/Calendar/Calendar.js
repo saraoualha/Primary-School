@@ -9,14 +9,12 @@ class Calendar extends React.Component {
   render() {
     return (
       <FullCalendar
-        /*plugins={[ dayGridPlugin ]}
+        plugins={[ dayGridPlugin ]}
         initialView="dayGridMonth"
         events={[
           { title: 'event 1', date: '2021-07-30' },
           { title: 'event 2', date: '2019-04-02' }
-        ]}*/
-        plugins={[ dayGridPlugin, interactionPlugin ]}
-        eventContent={renderEventContent}
+        ]}
       />
     )
   }
