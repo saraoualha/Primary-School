@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/pages/Home/Home';
 import About from './components/pages/About/About';
 import Calendar from './components/pages/Calendar/Calendar';
@@ -16,7 +16,7 @@ const App=()=>{
             <div className="content-wrap">
                 <Router>
                     <div>
-                    <Header/>
+                    <Header />
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/home/about" exact component={About} />
